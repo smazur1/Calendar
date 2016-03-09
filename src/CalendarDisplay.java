@@ -13,13 +13,11 @@ public class CalendarDisplay {
 	 */
 	public static void main(String[] args) {
 
-		// represents the month (1-12)
 		int month;
 
-		// represents the year
 		int year;
 
-		// ask month and year from user
+		
 		Scanner in = new Scanner(System.in);
 
 		System.out.print("Enter the month: ");
@@ -42,7 +40,7 @@ public class CalendarDisplay {
 	 * prints a calendar month based on month / year info
 	 */
 	private static void printCalendarMonthYear(int month, int year) {
-		// create a new GregorianCalendar object
+		
 		Calendar cal = new GregorianCalendar();
 
 		// set its date to the first day of the month/year given by user
@@ -51,7 +49,8 @@ public class CalendarDisplay {
 
 		// print calendar header
 		System.out.println(
-				"\n\t" + cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + cal.get(Calendar.YEAR));
+				"\n\t" + cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) +
+				" " + cal.get(Calendar.YEAR));
 
 		// obtain the weekday of the first day of month.
 		int firstWeekdayOfMonth = cal.get(Calendar.DAY_OF_WEEK);
@@ -64,10 +63,7 @@ public class CalendarDisplay {
 		printCalendar(numberOfMonthDays, firstWeekdayOfMonth);
 	}
 
-	/*
-	 * prints an anonymous calendar month based on the weekday of the first day
-	 * of the month and the number of days in month:
-	 */
+	
 	private static void printCalendar(int numberOfMonthDays, int firstWeekdayOfMonth) {
 
 		// reset index of weekday
@@ -101,7 +97,7 @@ public class CalendarDisplay {
 			}
 		}
 
-		// print a final new-line.
+		
 		System.out.println();
 	}
 }
